@@ -71,8 +71,14 @@ btn.addEventListener("click", (e) => {
 
 
 // function
+/**
+ * 
+ * @param {*} e 
+ */
 function umwandlen(e) {
-  //e.preventDefault();   // Fehler mit not a function weg
+  e.preventDefault();   // Fehler mit not a function weg
+
+  output.innerHTML = "";     // löscht die alten Eingaben
 
   console.log(e);
   // input feld text holen
@@ -114,7 +120,14 @@ function umwandlen(e) {
 
         console.log(morseCode)
 
-        output.innerHTML += ` ${morseCode} // `;
+        output.innerHTML += ` ${morseCode} // `; // Hallo was geht ab braucht  3582ms zum finden  925 Durchläufe
+         break                                   // wenn Buchstabe gefunden bricht er Suche ab 
+                                                // z.B. bei a Durchsucht er nicht bis z sondern bricht bei a ab 
+                                                // break geht, da es for Schleifen Durchlauf abbricht
+                                                // return geht nicht, da es nur aus if rauskommt :-( 
+                                                // somit nur 482 Durchaufe 2809ms        anstatt 925  3582ms
+                                                
+        
       }
 
     }
